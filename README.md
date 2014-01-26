@@ -100,6 +100,27 @@ $ Dexy serve
 ```
 Copy and paste the output URL into a browser to view your site files.
 
+
+
+### Grunt
+
+
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+The outer pipes (|) are optionaland you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+
+
+
 ### Style Guide
 [Front-End Style Guides](http://24ways.org/2011/front-end-style-guides/) are the visual guidelines for designing discrete web components. [Style guide driven development](https://speakerdeck.com/jina/style-guide-driven-ui-design-with-sass) using [module design and UI patterns](https://speakerdeck.com/anotheruiguy/module-design-ui-dev-patterns) integrates this methodology into the process, rather than simply documentation of an end product. This has enormous benefits in regards to testing and refining components and interactions to be self-contained, discrete, modules that can be rearranged and reorganized to fit different contexts. Early in the style guide development stage, it is often appropriate to use [PhantomJS](http://phantomjs.org/) and [CasperJS](http://casperjs.org/) to automate screen shots of different contexts and state styles to present for client signoff. Stephen Hay refers to this as "presentation psychology" and it can greatly reduce development time by postponing much of the cross browser testing until after client signoff. At that point, images can be swapped out for live HTML and thorough browser and device testing can be completed. The Style Guide clearly communicates interface and interaction standards to team members of any design/development knowledge.
 
