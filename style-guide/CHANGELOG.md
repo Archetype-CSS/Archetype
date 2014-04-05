@@ -12,3 +12,4 @@ Lot's happened that didn't get recoreded. Oops. See: [Commit History](https://gi
 
 ## Sat April 5, 2014
   * Move docs into their component's repo
+  * Move markup-patterns into their comonent's repo
