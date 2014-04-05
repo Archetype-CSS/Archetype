@@ -7,3 +7,8 @@
   * Cleaned up README.md with new install instructions
   * Add Archetype-Utilities as a dependency now that it has been converted to a compass extension.
 
+### NOTE:
+Lot's happened that didn't get recoreded. Oops. See: [Commit History](https://github.com/Archetype-CSS/Archetype/commits/master)
+
+## Sat April 5, 2014
+  * Move docs into their component's repo
