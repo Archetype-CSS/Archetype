@@ -1,4 +1,9 @@
 node_modules/
 .DS_Store
 .sass-cache/
+style-guide/sass/base/
+style-guide/sass/components/
+style-guide/sass/objects/
+style-guide/sass/main.scss
+style-guide/sass/temp/
 
