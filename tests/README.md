@@ -1,3 +1,0 @@
-# Archetype-CSS Tests
-
-

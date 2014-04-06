@@ -1,3 +1,83 @@
+/*** @export "settings" css */
+/**
+ * Archetype Settings 
+ *
+ */
+
+
+/**
+ * Imports
+ *
+ * 1. https://github.com/chriseppstein/compass
+ */
+
+@import "compass";                                        /* 1 */
+
+/**
+ * Compass
+ * 
+ * 1. Enable Compass to use HTML hacks to support IE 6 and 7
+ *    Note: Archetype supports IE9+ (IE6-8 are served a linear layout)
+ */
+$legacy-support-for-ie6 : false;                          /* 1 */
+$legacy-support-for-ie7 : false;                          /* 1 */
+$legacy-support-for-ie8 : true;                           /* 1 */
+
+/*** @export "vertical-rhythm" css */
+/**
+ * Compass Vertical Rhythm 
+ * 
+ * 1. Set this false for px's
+ * 2. This is automaticly converted to 100% by compass
+ * 3. Establishes a baseline for $base-font-size
+ */
+$relative-font-sizing : true;                         /* 2 */
+$base-font-size: $base-size;                          /* 2 */ 
+$base-line-height: 24px;
+@include establish-baseline($base-font-size);         /* 3 */
+
+
+
+/*** @export "settings" css */
+/**
+ * Archetype Settings 
+ *
+ */
+
+
+/**
+ * Imports
+ *
+ * 1. https://github.com/chriseppstein/compass
+ * 2. https://github.com/kwaledesign/Archetype-Utilities
+ */
+
+@import "compass";                                        /* 1 */
+
+/**
+ * Compass
+ * 
+ * 1. Enable Compass to use HTML hacks to support IE 6 and 7
+ *    Note: Archetype supports IE9+ (IE6-8 are served a linear layout)
+ */
+$legacy-support-for-ie6 : false;                          /* 1 */
+$legacy-support-for-ie7 : false;                          /* 1 */
+$legacy-support-for-ie8 : true;                           /* 1 */
+
+
+/*** @export "vertical-rhythm" css */
+/**
+ * Compass Vertical Rhythm 
+ * 
+ * 1. Set this false for px's
+ * 2. This is automaticly converted to 100% by compass
+ * 3. Establishes a baseline for $base-font-size
+ */
+$relative-font-sizing : true;                         /* 2 */
+$base-font-size: $base-size;                          /* 2 */ 
+$base-line-height: 24px;
+@include establish-baseline($base-font-size);         /* 3 */
+
 /**
  * Archetype Main Style Sheet
  * 
@@ -11,24 +91,19 @@
 /**
  * Base
  */
-@import "base/breakpoints";
-@import "base/color-pallet";
-@import "base/typography-pallet";
-@import "base/settings";
-@import "base/structure-units";
-@import "base/skin-units";
+@import "base/global-variables";
 
 
 /**
  * Objects
  */
-@import "objects/alert-object";
-@import "objects/button-object";
-@import "objects/close-object";
-@import "objects/label-object";
-@import "objects/media-object";
-@import "objects/nav-object";
-@import "objects/partition-object";
+//@import "objects/alert-object";
+//@import "objects/button-object";
+//@import "objects/close-object";
+//@import "objects/label-object";
+//@import "objects/media-object";
+//@import "objects/nav-object";
+//@import "objects/partition-object";
 
 
 /**
@@ -37,34 +112,32 @@
 @import "components/page";
 @import "components/typography";
 @import "components/lists";
-@import "components/tables";
 @import "components/links";
-@import "components/forms";
-@import "components/code";
-@import "components/figures";
-@import "components/links";
-@import "components/media";
-@import "components/quotes";
-@import "components/rules";
-@import "components/alerts";
-@import "components/buttons";
-@import "components/close";
-@import "components/icons";
-@import "components/labels";
-//@import "components/nav";
-@import "components/partitions";
 @import "components/spacers";
-@import "components/tabs";
 @import "components/typography";
-
+//@import "components/forms";
+//@import "components/code";
+//@import "components/figures";
+//@import "components/media";
+//@import "components/quotes";
+//@import "components/rules";
+//@import "components/alerts";
+//@import "components/buttons";
+//@import "components/close";
+//@import "components/icons";
+//@import "components/labels";
+//@import "components/nav";
+//@import "components/partitions";
+//@import "components/tabs";
+//@import "components/tables";
 
 /**
  * Layout
  */
 //@import "layout/susy-grid";
 //@import "layout/singularity-grid";
-@import "layout/print";
-
+//@import "layout/print";
+@import "layout/breakpoints";
 
 /**
  * Temp
