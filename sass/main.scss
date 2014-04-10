@@ -52,7 +52,7 @@ $base-line-height: 24px;
  * 2. https://github.com/kwaledesign/Archetype-Utilities
  */
 
-@import "compass";                                        /* 1 */
+//@import "compass";                                        /* 1 */
 
 /**
  * Compass
@@ -111,7 +111,7 @@ $base-line-height: 24px;
  */
 @import "components/page";
 @import "components/typography";
-@import "components/lists";
+//@import "components/lists";
 @import "components/links";
 @import "components/spacers";
 @import "components/typography";
