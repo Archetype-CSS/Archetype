@@ -1,6 +1,0 @@
-# Grunt Task Aliases
-#
-# Default Tasks
-default:
-  - 'concat'
-#  - 'watch'
