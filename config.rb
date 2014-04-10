@@ -1,9 +1,7 @@
-require 'archetype-utilities'
-require 'colorkit'
 require 'modular-scale'
 require 'breakpoint'
-# require 'singularitygs'
-# require 'singularity-extras'
+require 'singularitygs'
+require 'singularity-extras'
 # require 'susy'
 
 # Require any additional compass plugins here.
