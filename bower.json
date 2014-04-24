@@ -1,7 +1,6 @@
 {
   "name": "Archetype",
   "version": "2.0.0",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -10,6 +9,6 @@
     "tests"
   ],
   "dependencies": {
+    "jquery-1.10.4": "http://code.jquery.com/ui/1.10.4/jquery-ui.js"
   }
 }
-
