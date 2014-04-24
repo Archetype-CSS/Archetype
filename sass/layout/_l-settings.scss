@@ -1,58 +1,97 @@
 /**
- * Singularity Grid
+ * Archetype Layout
  * 
- * https://github.com/Team-Sass/Singularity
- * http://singularity.gs
  */
-
-@import "singularitygs";
 
 /**
- * Breakpoint settings:
+ * Susy
  */
-$breakpoint-no-query-fallbacks:             true;
-$breakpoint-to-ems:                         true;
-$breakpoints:                               '6 columns' 30em,
-                                            '8 columns' 40em,
-                                            '12 columns' 50em;
+@import "susy";
 
 /**
- * Singularity Settings
- * 
- * 1. Can be a number or a list of non-uniform column widths
- * 2. Must be of the same unit type of defined columns
- * 3. Grid padding can be any type of unit
- * 4. Layout direction - ltr, rtl, or both
- * 5. Choose a selector for rtl layouts when using 'both'
+ * Susy Config
+ *
+ * http://susydocs.oddbird.net/en/latest/settings/#global-defaults
  */
-$columns:                                   12;                   /* 1 */
-$gutter:                                    0.25;                 /* 2 */
-$padding:                                   0;                    /* 3 */
-$dir:                                       ltr;                  /* 4 */
-$rtl-selector:                              '[dir="rtl"]';        /* 5 */
-$grids-mobile-first:                        true;
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 12,
+  gutters: .25,
+  column-width: false,
+  global-box-sizing: border-box,
+  last-flow: to,
+  debug: (
+    image: show,
+    color: rgba(#66f, .25),
+    output: overlay,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
 
-/** 
+/**
  * Container
+ *
+ * Note: Optional argument defines width, Susy will default to max-width: 100% when ommitted. 
+ * If you are using static gridsSusy advises that you should make it auto instead and let Susy calculate the max width for you.
  */
-$output:                                    "float";
-$container:                                 100%;
-$container-to-ems:                          true;
-$background-grid-color:                     lighten(purple, 50%);
+
+.page {
+  @include container; 
+}
 
 
 /**
- * Grids
+ * Susy Span Mixin
+ *
+ * http://susydocs.oddbird.net/en/latest/toolkit/#span-mixin
+ *
+ * @include span( <width> [<wide / wider>] of <layout> [<last>] );
+ *
+ * 1. <width> refers to the number of columns the element going to take up.
+ * 2. [<wide / wider>]is a optional argument lets you expand the width of the column to include 1 or 2 more gutters respectively
+ * 3. of is a keyword to let Susy know that the layout is coming up.
+ * 4. <layout> is the context of the containeralong with other optionals that define the layout. (Context refers to the number of columns the parent container is made up of).
+ * 5. [<last>] is an optional argument that tells Susy that this element is supposed to be the last item in the row.
+ *
+ * Example: .some-selector { @include span(3 wide of 9 last); } 
+ * (width of 3 columns + 1 gutter, out of 9 columns and is the last item within the context)
+ *
  */
-$grids: 4;
-$grids: add-grid(6 at 30em);
-$grids: add-grid(8 at 40em);
-$grids: add-grid(12 at 50em);
+
 
 /**
- * Gutters
+ * Span Function
+ *
+ * http://susydocs.oddbird.net/en/latest/toolkit/#span-function
+ *
+ *The Span function is similar to the span mixinwith the exception that it only returns the width of the element. You will only need the <width></ wider> and <layout>
+ * 
+ * This span function makes life a ton easier by not having the need to remember any margins or padding mixins that susy previously uses. Nowyou can just use the span function to get the correct width to pad.
+ *
+ * Example: .some-selector { padding-left: span(1 of 9); }
+ * (padding of 1 column out of 9 columns)
+ *
  */
-$gutters: 1/3;
-$gutters: add-gutter(.25 at 50em);
 
+/**
+ * Gutter Function
+ *
+ * The gutter function takes only one argumentthe context.
+ *
+ * Example: .some-selector { margin-right: gutter(9); }
+ * (outputs margin that equals to 1 gutter width in a 9 column layout)
+ *
+ */
 
