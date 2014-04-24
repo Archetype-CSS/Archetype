@@ -124,7 +124,22 @@ module.exports = function(grunt) {
           cssDir: 'style-guide/assets/css/',
           environment: 'production'
         } 
+      },
+      test: {
+        options: {
+          config: 'config.rb',
+          sassDir: 'tests/sass/',
+          cssDir: 'tests/css/'
+        } 
       }
+    },
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 version', 'ie 8', 'ie 9']
+      },
+      styleguide: {
+        src: 'public/css/**/*.css'  // overridding src files here bc no dest given
+      },
     },
     // lint the compiled .css files in public/assets/css/
     // read config from .csslintrc in project root
@@ -157,10 +172,10 @@ module.exports = function(grunt) {
       dev: {
         src: [
         // Vendor
-        'bower_components/jquery-1.10.4/index.js',
+        //'bower_components/jquery-1.10.4/index.js',
         // Polyfills
         // Application
-        'style-guide/javascripts/styleguide.js'
+        'style-guide/assets/javascripts/styleguide.js'
         ],
         dest: 'public/javascripts/main.js',  
       }
@@ -244,6 +259,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
   //grunt.loadNpmTasks('grunt-connect-proxy');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
   // ------------ 
   // Register Grunt Tasks
@@ -266,18 +282,23 @@ module.exports = function(grunt) {
   grunt.registerTask('style-guide', [
     'clean:styleguide',
     'compass:styleguide',
+    //'autoprefixer:styleguide',
     //'csslint:styleguide',
-    'concat',
-    'uglify:main',
-    'uglify:modernizr',
     'copy:updateDocs',
     'shell:hologram',
-    'compress'
+    'compress',
+    'concat',
+    'uglify:main',
+    'uglify:modernizr'
   ]);
 
   grunt.registerTask('serve', [
     'connect',
     'open'
+  ]);
+
+  grunt.registerTask('test', [
+    'compass:test'
   ]);
 
 };
