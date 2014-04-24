@@ -1,10 +1,9 @@
-require 'archetype-utilities'
-require 'colorkit'
-require 'modular-scale'
+#require 'modular-scale'
+require 'compass'
 require 'breakpoint'
-# require 'singularitygs'
-# require 'singularity-extras'
-# require 'susy'
+require 'susy'
+#require 'singularitygs'
+#require 'singularity-extras'
 
 # Require any additional compass plugins here.
 
@@ -14,7 +13,7 @@ http_path = "/"
 css_dir = "css"
 sass_dir = "sass"
 images_dir = "images"
-javascripts_dir = "js"
+javascripts_dir = "javascripts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
@@ -31,3 +30,4 @@ javascripts_dir = "js"
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+

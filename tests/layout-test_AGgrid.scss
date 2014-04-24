@@ -1,0 +1,80 @@
+@import "compass";
+@import "susy";
+@import "breakpoint";
+
+
+
+.container {
+  @include container;
+    // This is the default clearfix from Compass. You can opt to use other clearfix methods
+  @include clearfix;
+}
+
+.ag1 {
+  // Mobile Styles here
+  @include breakpoint(900px) {
+    @include span(2 of 10);
+  }
+}
+
+.ag2 {
+  // Mobile Styles here
+  @include breakpoint(900px) {
+    @include span(6 of 10);
+    @include clearfix;
+  }
+}
+
+.ag3 {
+  // Mobile Styles here 
+  @include breakpoint(900px) {
+    @include span(2 of 10 last);
+  }
+}
+
+// --
+.ag4 {
+  @include span(3 of 6);
+}
+
+.ag5 {
+  @include span(3 of 6 last);
+}
+// --
+
+/**
+	* Alternatively, you can make use of the last mixin and write it this way. The last mixin just changes that element to be the last in the row. 
+*/
+
+/**
+.ag4,.ag5 {
+  @include span(3 of 6);
+}
+.ag5 {
+  @include last;
+}
+*/
+
+.ag6 {
+  @include span(2 of 6);
+}
+
+.ag7 {
+  @include span(4 of 6 last);
+  @include clearfix;
+}
+
+.ag8 {
+  @include span(2 of 4);
+}
+
+.ag9 {
+  @include span(2 of 4 last);
+}
+
+.ag10 {
+  clear: both;
+  // Alternatively, you can now use the span mixin with the full keyword to tell Susy this should be a 100% width 
+  // @include span(full);
+}
+
