@@ -1,12 +1,10 @@
-Archetype
-=========
-Archetype is a front-end toolkit designed with the principles of [OOCSS](https://github.com/stubbornella/oocss) and [SMACSS](http://smacss.com) for building responsive, mobile-first front-ends using a specific [coding standardard](https://github.com/kwaledesign/Coding-Standards). Archetype integrates [Dexy](http://dexy.it) to automatically generate and update a project specific style guide and/or pattern library to facilitate style-guide-driven development to create a custom framework that is easily testable.
+# Getting Started
 
 ## Dependencies
-  * [Archetype-Utilities](https://github.com/kwaledesign/Archetype-Utilities)
+  * ~~[Archetype-Utilities](https://github.com/kwaledesign/Archetype-Utilities)~~
   * [Modular-Scale](https://github.com/Team-Sass/modular-scale)
   * [Breakpoint](https://github.com/Team-Sass/breakpoint)
-  * [Colorkit](https://github.com/kwaledesign/Colorkit)
+  * ~~[Colorkit](https://github.com/kwaledesign/Colorkit)~~
 
 Archetype does not make any assumptions regarding layout allowing you to pull in your favorite grid or roll your own dependending on your project requirements.  However, there is a `_singularity-grid.scss` and a `_susy-grid.scss` partial file (disabled by default) to get started with either of those grid systems simply uncomment within `screen.scss` and also within `config.rb`.
 
@@ -37,13 +35,16 @@ There is a staggering amount of use cases that Dexy can satisfy and, therefore, 
     utilities allow for scriptable screen shots of components that can include
     both state (ie hover and active) and context (screen deminsion).
 
+
+
+
 ## Installation
-Archetype can be installed as using the [Archetype Yeoman Generator](https://github.com/kwaledesign/generator-archetype) or via Git. There is also a [Archetype Jekyll Yeoman Generator](https://github.com/kwaledesign/generator-archetype-jekyll) that has an option to include [Style Docs](https://github.com/kwaledesign/Style-Docs), a framework for responsive design deliverables.
+~~Archetype can be installed as using the [Archetype Yeoman Generator](https://github.com/kwaledesign/generator-archetype) or via Git. There is also a [Archetype Jekyll Yeoman Generator](https://github.com/kwaledesign/generator-archetype-jekyll) that has an option to include [Style Docs](https://github.com/kwaledesign/Style-Docs), a framework for responsive design deliverables.~~
 
-Installation via Git
+### Installation via Git
 
-```
-$ git clone https://github.com/kwaledesign/Archetype.git <your-project-name>
+```bash
+$ git clone https://github.com/Archetype-CSS/Archetype.git <your-project-name>
 
 ```
 This creates a cloned Archetype repository named `<your-project-name>` within your root
@@ -96,35 +97,26 @@ $ Dexy serve
 ```
 Copy and paste the output URL into a browser to view your site files.
 
-### Style Guide
-[Front-End Style Guides](http://24ways.org/2011/front-end-style-guides/) are the visual guidelines for designing discrete web components. [Style guide driven development](https://speakerdeck.com/jina/style-guide-driven-ui-design-with-sass) using [module design and UI patterns](https://speakerdeck.com/anotheruiguy/module-design-ui-dev-patterns) integrates this methodology into the process, rather than simply documentation of an end product. This has enormous benefits in regards to testing and refining components and interactions to be self-contained, discrete, modules that can be rearranged and reorganized to fit different contexts. Early in the style guide development stage, it is often appropriate to use [PhantomJS](http://phantomjs.org/) and [CasperJS](http://casperjs.org/) to automate screen shots of different contexts and state styles to present for client signoff. Stephen Hay refers to this as "presentation psychology" and it can greatly reduce development time by postponing much of the cross browser testing until after client signoff. At that point, images can be swapped out for live HTML and thorough browser and device testing can be completed. The Style Guide clearly communicates interface and interaction standards to team members of any design/development knowledge.
-
-### Pattern Library
-The Pattern Library is very similar to the Style Guide, the only difference being its intended audiance is the development team.  This document is built directly on top of the Style Guide and includes template includes for the HTML, CSS, Sass, and JavaScript code that supplement the rendered HTML examples. This document communicates not only how each component looks and behaves but also the code necessary to consistently implement.
-
-<hr>
-
-### License
-© Kwale Design - Original source code dual licensed under [MIT license](http://www.opensource.org/licenses/mit-license.php) / [GPL2 license](http://www.gnu.org/licenses/gpl-2.0.html). Open-sourced projects used within this project retain their original licenses.
 
 
 
-<section class="copy">
-  
-# Base
+## Customize and Extend
 
-The base directory contains styles and settings that apply to the entire project. These include the global settings used to alter multiple component's structure or skin as well as settings for compass and compass plugins. Base styles are convenient for maintaining consistency within a design system. 
 
-See the [Coding Standards](https://github.com/kwaledesign/Coding-Standards/blob/master/css.md) for further details.
+## Build Process
 
-Base style's include
-<ul>
-  <li><a href="/base/breakpoints.html">Breakpoints</a></li>
-  <li><a href="/base/color-pallet.html">Color-Pallet</a></li>
-  <li><a href="/base/typorgraphy-pallet.html">Typography-Pallet</a></li>
-  <li><a href="/base/settings.html">Settings</a></li>
-  <li><a href="/base/structure-units.html">Structure-Units</a></li>
-  <li><a href="/base/skin-units.html">Skin-Units</a></li>
-</ul>
+Archetype is built on [Bower](http://bower.io), [Grunt](http://gruntjs.com), and [Git](https://github.com/Archetype-CSS). The integrated build process can be managed with the following grunt commands. 
 
-</section>
+Archetype's build process is configured with the following:
+  * `config.json` - provide global path variable to use within tasks
+  * `Gruntfile.js` - main Grunt config, setup to use modular tasks with [load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks)
+  * `tasks/aliases.yml` - provide task aliases and trigger sub-tasks sequentially
+  * `tasks/options/` - where the individual tasks are kept
+
+| Grunt Task       | Description        |
+| ------------- | --------------------- |
+| `grunt`      | run all default grunt tasks in succession (`clean`, `compass`, `coffee`, )  |
+| `grunt build`      | rebuild the project, create production assets. runs `clean`, `compass`, `coffee` |
+| `grunt concat` | run only the concatenation tasks. combines all the CSS files generated by the compass task in `tmp/assets/css` and outputs a single `main.scs` file within the `public/assets/css/` directory  |
+
+
