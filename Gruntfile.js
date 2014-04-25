@@ -175,7 +175,7 @@ module.exports = function(grunt) {
         //'bower_components/jquery-1.10.4/index.js',
         // Polyfills
         // Application
-        'style-guide/assets/javascripts/styleguide.js'
+        'style-guide/assets/javascripts/main.js'
         ],
         dest: 'public/javascripts/main.js',  
       }
