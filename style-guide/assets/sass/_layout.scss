@@ -1,0 +1,441 @@
+/**
+ * Archetype Layout
+ * 
+ */
+
+/**
+ * Susy
+ */
+@import "susy";
+
+/**
+ * Susy Config
+ *
+ * http://susydocs.oddbird.net/en/latest/settings/#global-defaults
+ */
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 10,
+  gutters: .25,
+  column-width: false,
+  global-box-sizing: border-box,
+  last-flow: to,
+  debug: (
+    image: show,
+    color: rgba(#66f, .25),
+    output: overlay,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+/**
+ * Container
+ *
+ * Note: Optional argument defines width, Susy will default to max-width: 100% when ommitted. 
+ * If you are using static gridsSusy advises that you should make it auto instead and let Susy calculate the max width for you.
+ */
+
+.page {
+  @include container; 
+}
+
+
+/**
+ * Susy Span Mixin
+ *
+ * http://susydocs.oddbird.net/en/latest/toolkit/#span-mixin
+ *
+ * @include span( <width> [<wide / wider>] of <layout> [<last>] );
+ *
+ * 1. <width> refers to the number of columns the element going to take up.
+ * 2. [<wide / wider>]is a optional argument lets you expand the width of the column to include 1 or 2 more gutters respectively
+ * 3. of is a keyword to let Susy know that the layout is coming up.
+ * 4. <layout> is the context of the containeralong with other optionals that define the layout. (Context refers to the number of columns the parent container is made up of).
+ * 5. [<last>] is an optional argument that tells Susy that this element is supposed to be the last item in the row.
+ *
+ * Example: .some-selector { @include span(3 wide of 9 last); } 
+ * (width of 3 columns + 1 gutter, out of 9 columns and is the last item within the context)
+ *
+ */
+
+
+/**
+ * Span Function
+ *
+ * http://susydocs.oddbird.net/en/latest/toolkit/#span-function
+ *
+ *The Span function is similar to the span mixinwith the exception that it only returns the width of the element. You will only need the <width></ wider> and <layout>
+ * 
+ * This span function makes life a ton easier by not having the need to remember any margins or padding mixins that susy previously uses. Nowyou can just use the span function to get the correct width to pad.
+ *
+ * Example: .some-selector { padding-left: span(1 of 9); }
+ * (padding of 1 column out of 9 columns)
+ *
+ */
+
+/**
+ * Gutter Function
+ *
+ * The gutter function takes only one argumentthe context.
+ *
+ * Example: .some-selector { margin-right: gutter(9); }
+ * (outputs margin that equals to 1 gutter width in a 9 column layout)
+ *
+ */
+
+
+
+/**
+ * Layout
+ * 
+ */
+
+/**
+ * Main Section
+ */
+
+.container {
+  @include container(); 
+  @include pie-clearfix;
+}
+//.page.is-slide { @include span(8 of 10 last);}
+
+/**
+ * Header
+ */
+.header {
+  //@include grid-span(4, 1);
+  //@include respond-to('6 columns') {
+    //@include grid-span(6, 1); 
+  //}
+  //@include respond-to('8 columns') {
+    //@include grid-span(8, 1); 
+ // }
+  //@include respond-to('12 columns') {
+    //@include grid-span(12, 1); 
+ // }
+}
+
+.main-nav {
+  //width: 100%; 
+  background: #666666;
+}
+
+/**
+ * Body
+ */
+.container {
+}
+
+/** 
+ * Navigation
+ */
+/* nav object */
+/*
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include pie-clearfix;
+    & > li > a { 
+      display: inline-block; 
+    }        
+}
+*/
+
+.nav--slide {
+  margin-left: -100%;
+  float: left;
+  width: 10px;
+}
+
+.nav--slide.is-active {
+  margin-left: 0;
+  background: #E5E5E5;
+
+  //@include grid-span(2, 1);
+  //@include respond-to('6 columns') {
+    //@include grid-span(2, 1); 
+  //}
+  //@include respond-to('8 columns') {
+    //@include grid-span(3, 1); 
+  //}
+  //@include respond-to('12 columns') {
+    //@include grid-span(4, 1); 
+  //}
+}
+
+/**
+ * Main Section
+ */
+.page {
+  //@extend %grid-unit;
+  //@extend %size1of1;
+  //@include grid-span(4, 1);
+  //@include respond-to('6 columns') {
+    //@include grid-span(6, 1); 
+  //}
+  //@include respond-to('8 columns') {
+    //@include grid-span(8, 1); 
+  //}
+  //@include respond-to(')2 coluns') {
+    //@include grid-span(12, 1); 
+  //}
+}
+
+.page.is-slide {
+  //@include grid-span(2, 3);
+  //@include respond-to('6 columns') {
+    //@include grid-span(4, 3); 
+  //}
+  //@include respond-to('8 columns') {
+    //@include grid-span(5, 4); 
+  //}
+  //@include respond-to('12 columns') {
+    //@include grid-span(8, 5); 
+  //}
+}
+
+
+/**
+ * Archetype-Layout
+ * 
+ */
+
+/**
+ * Grid
+ * 
+ */
+ 
+/**
+ * grid variables
+ */
+$gutter: 25px;
+$unit-padding: 10px;
+$grid-row-spacer: 0;
+ 
+/**
+ * Grid Rows and Units
+ */
+%grid-row {
+  @include pie-clearfix;
+  padding: 0 $gutter;  // outside padding
+  margin-bottom: $grid-row-spacer;
+}
+ 
+%grid-unit {
+  float:left; 
+  padding: $unit-padding 0 $unit-padding $unit-padding;
+  &:last-of-type {
+    padding-right: 0;
+  }
+}
+ 
+%grid-unit-right {
+  float:right;
+}
+
+/**
+ * Widths
+ * 
+ * Intrisic and proportional widths to be extended to a grid object
+ *
+ */
+ 
+ 
+/**
+ * Intrinsic widths
+ * 
+ */
+ 
+ 
+/**
+ * Fit Children
+ *
+ * Make an element shrink wrap its content.
+ */
+%size-fit-children {
+    display: block;
+    float: left;
+    width: auto !important;
+}
+ 
+/**
+ * Fit Parent
+ *
+ * Make an element the width of its parent.
+ */
+%size-fit-parent {
+    display: block;
+    width: 100%;
+}
+ 
+/**
+ * Make an element fill the remaining space.
+ * 
+ * Note: This will hide overflow.
+ */
+%size-fill {
+    display: block;
+    overflow: hidden;
+    width: auto !important;
+}
+ 
+/**
+ * Proportional widths
+ * 
+ * Grid unit extenders - specify the proportional width of a grid unit
+ */
+ 
+%size1of1 { width: 100%; }
+%size1of2,
+%size2of4,
+%size3of6,
+%size5of10,
+%size6of12 { width: 50%; }
+%size1of3,
+%size2of6,
+%size4of8,
+%size4of12 { width: 33.33333%; }
+%size1of4,
+%size2of8,
+%size3of12 { width: 25%; }
+%size1of5,
+%size2of10 { width: 20%; }
+%size1of6,
+%size2of12 { width: 16.6666666%; }
+%size1of7 { width: 14.2857143%; }
+%size1of8 { width: 12.5%; }
+%size1of10 { width: 10%; }
+%size1of12 { width: 8.333%; }
+ 
+%size2of3,
+%size4of6 { width: 66.66666%; }
+%size2of5 { width: 40%; }
+%size2of7 { width: 28.5714286%; }
+ 
+%size3of4,
+%size6of8 { width: 75%; }
+%size3of5 { width: 60%; }
+%size3of7 { width: 42.8571429%; }
+%size3of8 { width: 37.5%; }
+%size3of10 { width: 30%; }
+ 
+%size4of5 { width: 80%; }
+%size4of7 { width: 57.1428572%; }
+%size4of10 { width: 40%; }
+ 
+%size5of6 { width: 83.3333333%; }
+%size5of7 { width: 71.4285715%; }
+%size5of8 { width: 62.5%; }
+%size5of12 { width: 41.666%; }
+ 
+%size6of7 { width: 85.7142858%; }
+%size6of10 { width: 60%; }
+ 
+%size7of8 { width: 87.5%; }
+%size7of10 { width: 70%; }
+%size7of12 { width: 58.333%; }
+
+
+
+/* Demo classes */
+
+.size1of1{@extend %size1of1;}
+.size1of2{@extend %size1of2;}
+.size1of3{@extend %size1of3;}
+.size1of4{@extend %size1of4;}
+.size1of5{@extend %size1of5;}
+.size1of6{@extend %size1of6;}
+.size1of7{@extend %size1of7;}
+.size1of8{@extend %size1of8;}
+
+.size2of3{@extend %size2of3;}
+.size2of4{@extend %size1of2;}
+.size2of5{@extend %size2of5;}
+.size2of6{@extend %size1of3;}
+.size2of7{@extend %size2of7;}
+.size2of8{@extend %size1of4;}
+
+.size3of4{@extend %size3of4;}
+.size3of5{@extend %size3of5;}
+.size3of6{@extend %size1of2;}
+.size3of7{@extend %size3of7;}
+.size3of8{@extend %size3of8;}
+
+.size4of5{@extend %size4of5;}
+.size4of6{@extend %size2of3;}
+.size4of7{@extend %size4of7;}
+.size4of8{@extend %size1of2;}
+
+.size5of6{@extend %size5of6;}
+.size5of7{@extend %size5of7;}
+.size5of8{@extend %size5of8;}
+
+.size6of7{@extend %size6of7;}
+.size6of8{@extend %size3of4;}
+
+.size7of8{@extend %size7of8;}
+
+
+
+
+/**
+ * Header
+ */
+.header {@extend %grid-row;}
+.main-nav {
+  @extend %grid-unit;
+  @extend %size1of1;
+  background: #666666;
+}
+
+/**
+ * Body
+ */
+.container {
+  @extend %grid-row;
+}
+
+/** 
+ * Navigation
+ */
+/* nav object */
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include pie-clearfix;
+    & > li > a { 
+      display: inline-block; 
+    }        
+}
+
+.nav--slide {
+  margin-left: -100%;
+  @extend %grid-unit;
+  @extend %size1of5;
+  background: #E5E5E5;
+}
+.nav--slide.is-active {
+  margin-left: 0;
+  margin-top: 1em;
+}
+
+.menu-link {color: green;}
+.menu-link.is-active {color: red;}
+
+
+
