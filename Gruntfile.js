@@ -62,7 +62,7 @@ module.exports = function(grunt) {
         }
       },
     shell: {
-      phantomas: {
+     phantomas: {
         command: 'phantomas --config phantomas-config.json --format tap --verbos'
           //'sudo phantomas --url /Users/sashley/Sites/Open-Source/Archetype/Archetype/style-guide/index.html --verbose'
       },
@@ -76,9 +76,9 @@ module.exports = function(grunt) {
         command: 'scss-lint style-guide/assets/sass/**/*.scss'
       },
     },
-    // rm /public dir to avoid residual files from previous builds
     clean: {
-      styleguide: ["public/"]
+      // rm /public dir to avoid residual files from previous builds
+      styleguide: ["public/"],
     },
     // update docs, pull most recent from bower_components/
     copy: {
@@ -267,7 +267,7 @@ module.exports = function(grunt) {
 
   // grunt - run only default grunt tasks
   grunt.registerTask('default', [
-    'style-guide',
+    'style-guide', // regnerate style guide
     'concurrent'
   ]);
 
