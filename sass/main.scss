@@ -34,8 +34,6 @@ $base-font-size: 16px; // just for now //$base-size;                          /*
 $base-line-height: 24px;
 @include establish-baseline($base-font-size);         /* 3 */
 
-
-
 /**
  * Archetype Main Style Sheet
  * 
@@ -44,45 +42,43 @@ $base-line-height: 24px;
 /**
  * Utilities
  */
-
-
+@include "bower_components/Archetype-u-colorkit/_u-colorkit";
+@include "bower_components/Archetype-u-normalize/_u-normalize";
 
 /**
  * Objects
  */
-//@import "objects/alert-object";
-//@import "objects/button-object";
-//@import "objects/close-object";
-//@import "objects/label-object";
-//@import "objects/media-object";
-//@import "objects/nav-object";
-//@import "objects/partition-object";
-
+//@import "bower_components/Archetype-o-nav";
+//@import "bower_components/Archetype-o-alert";
+//@import "bower_components/Archetype-o-button";
+//@import "bower_components/Archetype-o-close";
+//@import "bower_components/Archetype-o-label";
+//@import "bower_components/Archetype-o-media";
+//@import "bower_components/Archetype-o-partition";
 
 /**
  * Components
  */
-//@import "components/page";
-//@import "components/typography";
-//@import "components/lists";
-// @import "components/links";
-// @import "components/spacers";
-// @import "components/typography";
-//@import "components/forms";
-//@import "components/code";
-//@import "components/figures";
-//@import "components/media";
-//@import "components/quotes";
-//@import "components/rules";
-//@import "components/alerts";
-//@import "components/buttons";
-//@import "components/close";
-//@import "components/icons";
-//@import "components/labels";
-//@import "components/nav";
-//@import "components/partitions";
-//@import "components/tabs";
-//@import "components/tables";
+@import "bower_components/Archetype-c-typography";
+@import "bower_components/Archetype-c-page";
+//@import "bower_components/Archetype-c-lists";
+//@import "bower_components/Archetype-c-links";
+//@import "bower_components/Archetype-c-spacers";
+//@import "bower_components/Archetype-c-forms";
+//@import "bower_components/Archetype-c-code";
+//@import "bower_components/Archetype-c-figures";
+//@import "bower_components/Archetype-c-media";
+//@import "bower_components/Archetype-c-quotes";
+//@import "bower_components/Archetype-c-rules";
+//@import "bower_components/Archetype-c-alerts";
+//@import "bower_components/Archetype-c-buttons";
+//@import "bower_components/Archetype-c-close";
+//@import "bower_components/Archetype-c-icons";
+//@import "bower_components/Archetype-c-labels";
+//@import "bower_components/Archetype-c-nav";
+//@import "bower_components/Archetype-c-partitions";
+//@import "bower_components/Archetype-c-tabs";
+//@import "bower_components/Archetype-c-tables";
 
 /**
  * Layout
@@ -95,5 +91,4 @@ $base-line-height: 24px;
  * Temp
  */
 @import "temp/temp";
-
 
