@@ -105,12 +105,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           sassDir: 'sass/',
-          cssDir: 'css/',
-          config: 'config.rb',
-          includePaths: [
-            './bower_components/u-colorkit',
-            './bower_components/c-typography',
-            './bower_components/u-normalize'
+          cssDir: 'css/'
           ]
         }
       },
