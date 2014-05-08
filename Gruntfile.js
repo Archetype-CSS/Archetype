@@ -82,10 +82,9 @@ module.exports = function(grunt) {
     },
     // update docs, pull most recent from bower_components/
     copy: {
-      updateDocs: {
-        files: [
-          {expand: true, src: ['bower_components/Archetype/**/*.md', '!bower_components/Archetype/**/README.md'], dest: 'style-guide/docs/', filter: 'isFile'}
-        ]
+       updateStyleGuide: {
+        src: ['sass/**/*', 'bower_components/**/*.scss', 'style-guide/**/*'],
+        dest: 'build/',
       }
     },
     // display file size and gzip size of compiled assets 
@@ -283,7 +282,7 @@ module.exports = function(grunt) {
     'compass:styleguide',
     //'autoprefixer:styleguide',
     //'csslint:styleguide',
-    'copy:updateDocs',
+    'copy:updateStyleGuide',
     'shell:hologram',
     'compress',
     'concat',
