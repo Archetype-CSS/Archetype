@@ -6,3 +6,4 @@ build/
 log/
 css/
 bower_components/
+tests/Archetype-*-*/
