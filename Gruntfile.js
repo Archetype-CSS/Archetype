@@ -78,12 +78,18 @@ module.exports = function(grunt) {
     },
     clean: {
       // rm /public dir to avoid residual files from previous builds
-      styleguide: ["public/"],
+      public: ["public/"],
+      build: ["build/"]
     },
     // update docs, pull most recent from bower_components/
     copy: {
-       updateStyleGuide: {
-        src: ['sass/**/*', 'bower_components/**/*.scss', 'style-guide/**/*'],
+      updateTests: {
+        files: [
+          {cwd: 'bower_components', expand: 'true', src: ['Archetype-?-*/test/**/*'], dest: 'tests/'},
+        ]
+      },
+      updateStyleGuide: {
+        src: ['sass/**/*', 'bower_components/**/*.scss', 'style-guide/**/*', 'tests/**/*'],
         dest: 'build/',
       }
     },
@@ -278,11 +284,13 @@ module.exports = function(grunt) {
   ]);*/
 
   grunt.registerTask('style-guide', [
-    'clean:styleguide',
+    'clean:build',
+    'clean:public',
     'compass:styleguide',
     //'autoprefixer:styleguide',
     //'csslint:styleguide',
     'copy:updateStyleGuide',
+    'copy:updateTests',
     'shell:hologram',
     'compress',
     'concat',
