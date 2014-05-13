@@ -110,7 +110,8 @@ module.exports = function(grunt) {
       dev: {
         options: {
           sassDir: 'sass/',
-          cssDir: 'css/'
+          cssDir: 'css/',
+          config: 'config.rb'
         }
       },
       prod: {
