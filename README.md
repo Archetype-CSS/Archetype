@@ -2,7 +2,7 @@
 
 >Archetype (n): 1. A symbol, pattern, or prototype upon which others are copied, patterned, or emulated; 2. A flexible, object oriented, Sass architecture for mobile-first, responsive builds with built in live style guide.
 
-Archetype is a front-end toolkit designed with the principles of [OOCSS](https://github.com/stubbornella/oocss) and [SMACSS](http://smacss.com) for building responsive, mobile-first front-ends using a specific [coding standardard](https://github.com/Archetype-CSS/Coding-Standards). Archetype integrates [Hologram](https://github.com/trulia/hologram) to automatically generate and update a project specific style guide and/or pattern library to facilitate style-guide-driven development and encourage frequent testing.
+Archetype is a front-end toolkit designed with the principles of [OOCSS](https://github.com/stubbornella/oocss) and [SMACSS](http://smacss.com) for building responsive, mobile-first front-ends using a specific [coding standardard](https://github.com/Archetype-CSS/Archetype/blob/dev/style-guide/docs/README.md). Archetype integrates [Hologram](https://github.com/trulia/hologram) to automatically generate and update a project specific style guide and/or pattern library to facilitate style-guide-driven development, as well as encourage frequent testing and a performant front-end.
 
 Docs and Demo coming soon.
 
