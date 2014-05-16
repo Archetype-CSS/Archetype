@@ -475,3 +475,15 @@ $grid-row-spacer: 0;
   -o-transition: -o-transform 500ms ease;
   transition: transform 500ms ease;
 }
+
+.header--title {
+  //display: inline-block;
+  float:left;
+}
+.menu-button {
+  //display: inline-block;
+  float:left;
+}
+.header {
+  @include pie-clearfix;
+}

@@ -42,10 +42,10 @@ $base-line-height: 24px;
 /**
  * Utilities
  */
-@import "../bower_components/u-componentConstructor/_u-componentConstructor";
-@import "../bower_components/u-colorkit/_u-colorkit";
-@import "../bower_components/u-normalize/_u-normalize";
-
+@import "../bower_components/Archetype-u-componentConstructor/_u-componentConstructor";
+@import "../bower_components/Archetype-u-colorkit/_u-colorkit";
+@import "../bower_components/Archetype-u-normalize/_u-normalize";
+@import "../bower_components/Archetype-u-units/_u-units";
 /**
  * Objects
  */
@@ -60,8 +60,8 @@ $base-line-height: 24px;
 /**
  * Components
  */
-@import "../bower_components/c-typography/_c-typography";
-//@import "../bower_components/c-page/_c-page";
+@import "../bower_components/Archetype-c-typography/_c-typography";
+@import "../bower_components/Archetype-c-page/_c-page";
 //@import "bower_components/c-spacers/_c-spacers";
 
 
