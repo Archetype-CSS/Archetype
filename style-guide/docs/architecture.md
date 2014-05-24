@@ -25,17 +25,15 @@ Most of Archetype's modules (utilities, objects, and components) are managed wit
   2. **Separation of Container and Content** - avoid all explicit parent-child relationship within style declarations so that a component's style is not dependant upon its container which allows the module to be reused [[6]](addendum.md).
 
 ### Utilities
-Archetype utilities are low-level abstractions used globally throughout a design system via a class, function, or mixin to provide specific functionality. Utilities are maintained within their own repository, managed with [Bower](http://bower.io), and are `@import`-ed within `main.scss`. All utilities are prefixed with `u-`. They are installed using `bower install Archetype-u-[utility-Name]`. Some utility abstractions, like [u-display](https://github.com/Archetype-CSS/u-display) and [u-size](https://github.com/Archetype-CSS/u-size) can be applied to HTML elements directly.  In this case, they should be prefixed using the `u-utilityName` (in camelCase). Other utilities, (like functions and mixins) are applied within the stylesheets, rather than the markup.
+Archetype utilities are low-level abstractions used globally throughout a design system via a class, function, or mixin to provide specific functionality. Utilities are maintained within their own repository, managed with [Bower](http://bower.io), and are `@import`-ed within `main.scss`. All utilities are prefixed with `Archetype-u-`. They are installed using `bower install Archetype-u-[utility-Name]`. Some utility abstractions, like [Archetype-u-display](https://github.com/Archetype-CSS/u-display) and [u-size](https://github.com/Archetype-CSS/u-size) can be applied to HTML elements directly.  In this case, they should be prefixed using the `Archetype-u-utilityName` (in camelCase). Other utilities, (like functions and mixins) are applied within the stylesheets, rather than the markup.
 
 ### Objects
-Object styles are generic abstractions that can be extended to build a component. They are styles which remain consistent and unchanged within a component regardless of skin or structure and are abstracted to be used as a foundation for building UI components. The classic OOCSS example is the media-object [[16]](addendum). Each object is maintained within its own repository, managed with [Bower](http://bower.io), and `@import`-ed into `main.scss`. All objects are prefixed with `o-`. They are installed using `bower install Archetype-o-[object-name]`.
+Object styles are generic abstractions that can be extended to build a component. They are styles which remain consistent and unchanged within a component regardless of skin or structure and are abstracted to be used as a foundation for building UI components. The classic OOCSS example is the media-object [[16]](addendum). Each object is maintained within its own repository, managed with [Bower](http://bower.io), and `@import`-ed into `main.scss`. All objects are prefixed with `Archetype-o-`. They are installed using `bower install Archetype-o-[object-name]`.
 
 ### Sub Objects
-
-An Archetype sub object is a context-dependant sibling of an object that performs a certain function and is represented by an additional HTML class attribute on the element. Sub Objects are denoted by the use of `__` (double underscores) i.e. `.objectName__subObjectName` in order to maintain the sub object's context, maintain control of the cascade, and avoid location-dependant selectors [[2]](addendum.md). Sub objects extend or provide minor overrides to the object and is often applied to the same HTML element or a direct decendent. 
+An Archetype sub object is a context-dependant sibling of an object that performs a certain function and is represented by an additional HTML class attribute on the element. Sub Objects are denoted by the use of `__` (double underscores) for example, `.objectName__subObjectName` in order to maintain the sub object's context, maintain control of the cascade, and avoid location-dependant selectors [[2]](addendum.md). Sub objects extend or provide minor overrides to the object and is often applied to the same HTML element or a direct decendent. 
 
 ### Components
-
 A discrete and independent entity designed to exist as a stand alone module without any dependencies to its container. A component can be simple or compound (contain one or more components) and it should be able to be relocated on the page without breaking [[1]](addendum). Example components include buttons, navigation bars, etc. An example of a compound component would be a search block composed of an input and a submit button [[2]](addendum.md).
 
 In order to maintain modularity a component must adhere to the following:
@@ -46,8 +44,7 @@ In order to maintain modularity a component must adhere to the following:
   * Selectors must remain context free and un-coupled to HTML by avoiding the use of elements within CSS selectors. HTML element styles are scoped by placing a class on either the element itself or on a parent container. This means all HTML element styles are opt-in (opposed to opt-out) making the only "default" HTML element styles are those applied by normalize, thus avoiding redundant overrides. [[27]](addendum.md) [[28](addendum.md)
 
 #### State
-
-A state is a variant of a component that is triggered by an action or behavior. State styles are applied dynamically as an additional HTML class attribute on the component's root or child HTML element. State based styles are indicated with the is- prefix, i.e. .is-active.is-disabled. These style declarations are shared by CSS and JS files [[1]](addendum.md) and are defined with the component in the same partial. Multiple states may be used at once on the same component.
+A state is a variant of a component that is triggered by an action or behavior. State styles are applied dynamically as an additional HTML class attribute on the component's root or child HTML element. State based styles are indicated with the `is-` prefix, for example `.is-active` or `.is-disabled`. These style declarations are shared by CSS and JS files [[1]](addendum.md) and are defined with the component in the same partial. Multiple states may be used at once on the same component.
 
 
 ---
@@ -56,11 +53,11 @@ A state is a variant of a component that is triggered by an action or behavior. 
 
 >component composition is the building of the discrete modules of a system using common, object oriented, abstractions represented as an additional HTML class attribute. 
 
-Building complex components with smaller, abstracted code blocks leads to more reusable code, easier debugging, and a DRYer code base by cutting down on repetition and increasing performance. It also allows for easier prototyping within the browser when skin and structure styles can be applied to a component separately. A component is comprised of object, structure, skin, and in some cases utilities. Class naming and [selector construct](https://github.com/Archetype-CSS/Archetype-docs/blob/master/architecture.md#selector-construct) is very important. This syntax and naming convention illustrates the intention of a class and its relationship to others.
+Building complex components with smaller, abstracted code blocks leads to more reusable code, easier debugging, and a DRYer code base while cutting down on repetition and increasing performance. It also allows for easier prototyping within the browser when skin and structure styles can be applied to a component separately. A component is comprised of object, structure, skin, and in some cases utilities. Class naming and selector construct is very important. This syntax and naming convention illustrates the intention of a class and its relationship to others.
 
 Components use a multi-class pattern in order to allow for easier contextual based adjustments when necessary, and to help simplify class and variable names[[3]](addendum.md). For example, structure, skin, and state styles are extended via their own class, rather than attaching a suffix to an existing component class.
 
-In this way a component can be thought of as a specific combination of classes. Changing even one of these classes constitutes an entirely different component. For example, the same button component with two different skin classes is actually two different components. Additionally, an object could be represented as a single class or even a Sass `@extend` such as a `%u-clearfix`. A component does not have to be a visual entity.
+In this way a component can be thought of as a specific combination of classes. Changing even one of these classes constitutes an entirely different component. For example, the same button component with two different skin classes is actually two different components. Additionally, an object could be represented as a single class or even a Sass `@extend` such as a `%u-clearfix`. Notice that a component does not have to be a visual entity.
 
 
 ### Structure Styles
@@ -69,17 +66,16 @@ Styles which control a component's physical structure. Structure styles include 
 ### Skin Styles
 Styles which control a component's visual appearance. Skin styles include any properties involving color, typography, gradients, shadows, etc. Skin classes extend an object class. There must be no dependencies between skin and structure.
 
-*Note: Sometimes the distinction between structure and skin is non-trivial. For example, the arrival of border-box has greatly simplified the box-model, but makes the border property a bit more difficult to define in this context because it no longer contributes to an element's width (structure). The best way to handle this is to split up border property defining border-width and border-style as structure and border-color as skin. An example that makes this more clear is when building a tab component where the structure of the tab requires a transparent bottom border for the active tab and the skin of the tab requires a light gray border.*
+*Note: Sometimes the distinction between structure and skin is non-trivial. For example, the arrival of border-box has greatly simplified the box-model, but makes the border property a bit more difficult to define in this context because it no longer contributes to an element's width (structure). The best way to handle this is to split up border property defining `border-width` and `border-style` as structure and `border-color` as skin. An example that makes this more clear is when building a tab component where the structure of the tab requires a transparent bottom border for the active tab and the skin of the tab requires a light gray border.*
 
 ### Layout Styles
-Styles that define how a component sits on the page. A component's layout class uses the `l-` prefix followed by the component's name [[1]](addendum.md). Layout styles include width and grid layout.
+Styles that define how/where a component sits on the page. A component's layout class uses the `l-` prefix followed by the component's name [[1]](addendum.md). Layout styles include width and grid layout.
 
   * All components are fluid by nature and should never be given explicit width or height restraints. A component's width is determined by its parent container or grid system.
-  * Heights should only be explicitly defined for elements which had dimensions before they entered the system; i.e. image, video. In all other cases use line-height instead which is far more flexible [[13]](addendum).
-  * The grid system should never have styles or box-model properties directly applied - grid items contain content, but are not content in themselves.
+  * Heights should only be explicitly defined for elements which had dimensions before they entered the system; i.e. image, video. In all other cases use `line-height` instead which is far more flexible [[13]](addendum).
+  * The grid system should never have styles or box-model properties directly applied - grid items contain content, but are not content in of themselves.
 
 ### Icons
-
   * Icons should be styled as independent entities to allow their use in any component without the need for duplication of code.
   * Icon components are prefixed with `i-`.
   * Icon styles should be split into structure and skin (`.i-small` & `.i-primary` classes) in order to allow for maximum flexibility and minimal code repetition [[1]](addendum.md).
@@ -89,12 +85,10 @@ Styles that define how a component sits on the page. A component's layout class 
 
 
 ### JavaScript
-
   * Custom `data-` attributes are reserved for applying dynamic behavior to a component. This keeps behavior out of the class attribute where component composition takes place. 
  * A `data-` attribute should never be referenced in a stylesheet. They are used exclusively for JavaScript files [[3]](addendum.md). Keeping these concerns separated makes development easier.
 
 ### QA
-
   * The only acceptable use of the HTML ID attribute is for the integration of quality assurance tooling.  Dedicating the ID attribute, as well as name-spacing these hooks with `qa-` ensures that they will never be used for any other purpose or accidentally removed from the markup. 
   * The prefix indicates the ID’s purpose, the number appended after the dash can be dynamically generated so every element has a unique identifier to build testing scripts for.
 
@@ -123,20 +117,18 @@ Minimize "depth of applicability" in order to avoid over-reliance on a predefine
 
   * Do not use CSS ID selectors.
   * Do not use location based selectors to change a component's appearance based on its page position or region - i.e. (main-content, side-bar, footer, etc)[[17]](addendum.md). When a component has different appearances create a new component by changing out its structure or skin class.
-  * Always name-space state class names e.g. `.is-disabled.is-collapsed` with a prefix.
+  * Always name-space state class names e.g. `.is-disabled` or `.is-collapsed` with a prefix.
   * Avoid the use of element selectors in order to keep them free from context and un-coupled to the HTML. Scope HTML element selectors with a class on the root element or a parent element so that these styles are opt-in rather than opt-out. This will avoid redundant overrides of un-needed styles and keep specificity minimal. [[1]](addendum.md) [[27]](addendum.md) [[28]](addendum.md)
-  * `!important` should be avoided as much as possible. State and utility styles  are an examples of an acceptable use of `!important` [[1]](addendum.md).
-  * Never qualify a selector with an element selector e.g. `ul.nav`, as this decreases selector performance, creates a context dependency, and increases the selector's specificity. These are all things to be avoided [[1]](addendum.md) [[12]](addendum.md).
+  * `!important` should be avoided as much as possible. State and utility styles are an examples of an acceptable use of `!important` [[1]](addendum.md). The reason for this is that they are applied to the element and must override any default component styles.
+  * Never qualify a selector with an element selector e.g. `ul.nav`, as this decreases selector performance, creates a context dependency, and increases the selector's specificity. These are all things to be avoided [[1]](addendum.md) [[12]](addendum.md). Applying styles directly to the element, or qualifying a slector with an element name should be considered as harmful as polluting the global name space in JavaScript. Don't do it.
 
 ---
 
 ## Selector Construct and Naming Conventions
-
 Selector construct must explicitly communicate the context and function of the entity being named. Also, selector construct must be consistently applied to allow for efficient use of grep and more meaningful diffs. The BEM Methodology [[2]](addendum.md) and interpretations of BEM [[3]](addendum.md) [[13]](addendum.md) [[26]](addendum.md) make use of an efficient system to accomplish these goals by explicitly communicating the function and context of the entity being named, as well as its relationship to both child and parent components while avoiding deeply nested selectors that tie content to container and make assumptions about markup. In this way, a BEM-like system helps to reinforce our primary objective of modularity.
-Admittedly, there is an element of added complexity, but the sacrifice of simple selectors in order to preserve objected oriented principles is well worth it especially considering the fact that GZIP handles repetition extremely well.
+Admittedly, there is an element of added complexity, but the sacrifice of simple selectors in order to preserve objected oriented principles is well worth it, especially considering that the GZIP algorythm handles repetition extremely well.
 
 An effective naming convention explicitly communicates the context and function of the entity being named.  Archetype relies on a structured, BEM-like[[2]](2) naming convention for building class names using meaningful hyphens, underscores, and cammelCase syntax to communicate the relationship between classes and their place within the system. There is a major division between objects, components, and utilities, as well as a minor separation of responsibilities built on top.
-
 
 ### Naming Pattern
 
