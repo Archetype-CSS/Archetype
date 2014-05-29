@@ -66,8 +66,8 @@ module.exports = function(grunt) {
         command: 'phantomas --config phantomas-config.json --format tap --verbos'
           //'sudo phantomas --url /Users/sashley/Sites/Open-Source/Archetype/Archetype/style-guide/index.html --verbose'
       },
-      hologram: {
-        command: 'hologram hologram-config.yml'
+      dexy: {
+        command: 'dexy -r'
       },
       scsslint: {
         command: 'scss-lint sass/**/*.scss'
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
       },
       updateStyleGuide: {
         src: ['sass/**/*', 'bower_components/**/*.scss', 'style-guide/**/*', 'tests/**/*'],
-        dest: 'build/',
+        dest: 'style-guide/build/',
       }
     },
     // display file size and gzip size of compiled assets 
@@ -111,7 +111,8 @@ module.exports = function(grunt) {
         options: {
           sassDir: 'sass/',
           cssDir: 'css/',
-          config: 'config.rb'
+          config: 'config.rb',
+          importPath: './bower_components'
         }
       },
       prod: {
@@ -292,7 +293,7 @@ module.exports = function(grunt) {
     //'csslint:styleguide',
     'copy:updateStyleGuide',
     'copy:updateTests',
-    'shell:hologram',
+    'shell:dexy',
     'compress',
     'concat',
     'uglify:main',
