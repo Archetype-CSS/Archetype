@@ -42,10 +42,10 @@ $base-line-height: 24px;
 /**
  * Utilities
  */
-@import "../bower_components/Archetype-u-componentConstructor/_u-componentConstructor";
-@import "../bower_components/Archetype-u-colorkit/_u-colorkit";
-@import "../bower_components/Archetype-u-normalize/_u-normalize";
-@import "../bower_components/Archetype-u-units/_u-units";
+@import "Archetype-u-componentConstructor";
+@import "Archetype-u-colorkit";
+@import "Archetype-u-normalize";
+@import "Archetype-u-units";
 /**
  * Objects
  */
