@@ -63,3 +63,5 @@
 
 
   </article>
+
+  inspired by: [mvc-style-guide](http://blog.sourcing.io/mvc-style-guide)
