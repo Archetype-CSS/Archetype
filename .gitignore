@@ -7,3 +7,5 @@ log/
 css/
 bower_components/
 tests/Archetype-*-*/
+.dexy/
+output/
