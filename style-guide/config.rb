@@ -1,6 +1,7 @@
-#require 'modular-scale'
+require 'modular-scale'
 require 'breakpoint'
 require 'susy'
+require 'jacket'
 
 # Require any additional compass plugins here.
 
