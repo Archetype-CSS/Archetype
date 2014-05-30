@@ -155,6 +155,12 @@ module.exports = function(grunt) {
       },
       styleguide: {
         src: ['style-guide/assets/css/*.css']
+      },
+      archetype: {
+        src: ['style-guide/static/css/main.css']
+      },
+      components: {
+        src: ['style-guide/static/css/components.css']
       }
     },
     // gzip assets 1-to-1 for production
