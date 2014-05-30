@@ -30,6 +30,7 @@ Dependencies are managed with [bower](http://bower.io). The following are instal
   * [Modular Scale](https://github.com/Team-Sass/modular-scale)
   * [Sassy Math](https://github.com/Team-Sass/Sassy-math)
   * [Modernizr](http://modernizr.com)
+  * [Jacket](https://github.com/Tam-Sass/jacket)
 
 ---
 ### License
