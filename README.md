@@ -33,6 +33,14 @@ Dependencies are managed with [bower](http://bower.io). The following are instal
   * [Modernizr](http://modernizr.com)
   * [Jacket](https://github.com/Tam-Sass/jacket)
 
+### Additional Archetype Modules
+
+Each installed individually using Bower or Git
+
+  * [Archetype Components](https://github.com/Archetype-CSS?query=Archetype-c-)
+  * [Archetype Utilities](https://github.com/Archetype-CSS?query=Archetype-u-)
+  * [Archetype Objects](https://github.com/Archetype-CSS?query=Archetype-o-)
+
 ---
 ### License
 Original source code licensed under [MIT license](http://www.opensource.org/licenses/mit-license.php). Open-sourced projects used within this project retain their original licenses.
