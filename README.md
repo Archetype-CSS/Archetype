@@ -17,10 +17,11 @@ A specific implimentation of several open source projects.
 ## Dependencies
 Dependencies are managed with [bower](http://bower.io). The following are installed via `bower install`.
 
-  * [Archetype-u-colorkit](https:github.com/Archetype-CSS/Archetype-u-colorkit)
-  * [Archetype-c-typography](https:github.com/Archetype-CSS/Archetype-c-typography)
-  * [Archetype-u-normalize](https:github.com/Archetype-CSS/Archetype-u-normalize)
-  * [Archetype-u-componentConstructor](https:github.com/Archetype-CSS/Archetype-u-componentConstructor)
+  * [Archetype-u-colorkit](https://github.com/Archetype-CSS/Archetype-u-colorkit)
+  * [Archetype-c-typography](https://github.com/Archetype-CSS/Archetype-c-typography)
+  * [Archetype-u-normalize](https://github.com/Archetype-CSS/Archetype-u-normalize)
+  * [Archetype-u-componentConstructor](https://github.com/Archetype-CSS/Archetype-u-componentConstructor)
+  * [Archetype-c-page](https://github.com/Archetype-CSS/Archetype-c-page)
 
 ### Third Party Dependencies
 

@@ -277,11 +277,17 @@ module.exports = function(grunt) {
   // Register Grunt Tasks
   // ------------ 
 
-  // grunt - run only default grunt tasks
+  // grunt - run only csslint (and anything else you want run with travis ci..tred lightly)
   grunt.registerTask('default', [
+    'csslint:archetype'
+  ]);
+
+  // grunt - run only default grunt tasks
+  grunt.registerTask('run', [
     'style-guide', // regnerate style guide
     'concurrent'
   ]);
+
 
 /*  grunt.registerTask('phantomas', [
     'phantomas'
