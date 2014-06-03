@@ -25,6 +25,8 @@ Dependencies are managed with [bower](http://bower.io). The following are instal
 
 ### Third Party Dependencies
 
+Each installed via Ruby Gems to your local machine. See each project's install docs.
+
   * [Susy](http://susy.oddbird.net)
   * [Breakpoint](https://github.com/Team-Sass/breakpoint)
   * [Compass](http://compass-style.org/)
