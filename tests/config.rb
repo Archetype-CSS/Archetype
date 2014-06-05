@@ -1,4 +1,4 @@
-#require 'modular-scale'
+require 'modular-scale'
 require 'compass'
 require 'breakpoint'
 require 'susy'
