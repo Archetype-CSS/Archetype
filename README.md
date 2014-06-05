@@ -1,4 +1,4 @@
-# Archetype [![Build Status](https://secure.travis-ci.org/Archetype-CSS/Archetype.png?branch=master)](http://travis-ci.org/Archetype-CSS/Archetype) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# Archetype [![Build Status](https://secure.travis-ci.org/Archetype-CSS/Archetype.png?branch=master)](http://travis-ci.org/Archetype-CSS/Archetype) [![Dependency Status](http://img.shields.io/gemnasium/Archetype-CSS/Archetype.svg)](https://gemnasium.com/Archetype-CSS/Archetype) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 >Archetype (n): 1. A symbol, pattern, or prototype upon which others are copied, patterned, or emulated; 2. A flexible, object oriented, Sass architecture for mobile-first, responsive builds with built in live style guide.
 
