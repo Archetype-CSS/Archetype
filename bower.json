@@ -1,13 +1,19 @@
 {
   "name": "Archetype",
-  "version": "2.0.0",
+  "version": "0.8.0",
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "tests"
+    "bower_components"
   ],
   "dependencies": {
-    "jquery-1.10.4": "http://code.jquery.com/ui/1.10.4/jquery-ui.js"
+    "jquery-1.10.4": "http://code.jquery.com/ui/1.10.4/jquery-ui.js",
+    "Archetype-u-componentConstructor": "~>0.8.0",
+    "Archetype-c-page": "~>0.8.0",
+    "Archetype-typography": "~>0.8.0",
+    "Archetype-u-colorkit": "~>0.8.0",
+    "Archetype-u-normalize": "~>0.8.0",
+    "Archetype-u-normalize": "~>0.8.0",
+    "Archetype-u-units": "~>0.8.0"
   }
 }
