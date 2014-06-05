@@ -1,9 +1,7 @@
-#require 'modular-scale'
+require 'modular-scale'
 require 'compass'
 require 'breakpoint'
 require 'susy'
-#require 'singularitygs'
-#require 'singularity-extras'
 
 # Require any additional compass plugins here.
 
