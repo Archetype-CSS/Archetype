@@ -1,50 +1,29 @@
-/*doc
----
-title: Layout Settings
-name: badgeSkins
-category: Layout
----
-
-Class          | Description
--------------- | -----------------
-badgeStandard  | This is a basic badge
-badgePrimary   | This is a badge with the trulia orange used on CTAs
-badgeSecondary | This is a badge with the alternate CTA color (Trulia green)
-badgeTertiary  | This is a badge for a warning or something negative
-
-
-```html_example
-<strong class="badgeStandard">Sold</strong>
-<strong class="badgePrimary">For Sale</strong>
-<strong class="badgeSecondary">For Rent</strong>
-```
-
-*/
-
 /**
  * Archetype Layout
  * 
+ * 1. Susy ( http://susydocs.oddbird.net/ ) - layout system
+ * 2. Breakpoint ( https://github.com/Team-Sass/breakpoint ) - media query handling and helpers
+ *
+ * docs: on Susy & Breakpoint integration: 
+ * http://susy.readthedocs.org/en/latest/toolkit/#breakpoint
+ *
  */
-
-/**
- * Susy
- */
-@import "susy";
+@import "susy";         /* 1 */
+@import "breakpoint";   /* 2 */
 
 /**
  * Susy Config
- *
  * http://susydocs.oddbird.net/en/latest/settings/#global-defaults
  */
 $susy: (
   flow: ltr,
   math: fluid,
   output: float,
-  gutter-position: after,
+  gutter-position: split,
   container: auto,
   container-position: center,
   columns: 12,
-  gutters: .25,
+  gutters: .25, // this is always a fraction of one whole column
   column-width: false,
   global-box-sizing: border-box,
   last-flow: to,
@@ -52,69 +31,39 @@ $susy: (
     image: show,
     color: rgba(#66f, .25),
     output: overlay,
-    toggle: top right,
+    toggle: bottom right,
   ),
   use-custom: (
     background-image: true,
     background-options: false,
     box-sizing: true,
-    clearfix: false,
+    clearfix: true,
     rem: true,
   )
 );
 
 /**
- * Container
- *
- * Note: Optional argument defines width, Susy will default to max-width: 100% when ommitted. 
- * If you are using static gridsSusy advises that you should make it auto instead and let Susy calculate the max width for you.
- */
-
-.page {
-  @include container; 
-}
-
-
-/**
- * Susy Span Mixin
- *
- * http://susydocs.oddbird.net/en/latest/toolkit/#span-mixin
- *
- * @include span( <width> [<wide / wider>] of <layout> [<last>] );
- *
- * 1. <width> refers to the number of columns the element going to take up.
- * 2. [<wide / wider>]is a optional argument lets you expand the width of the column to include 1 or 2 more gutters respectively
- * 3. of is a keyword to let Susy know that the layout is coming up.
- * 4. <layout> is the context of the containeralong with other optionals that define the layout. (Context refers to the number of columns the parent container is made up of).
- * 5. [<last>] is an optional argument that tells Susy that this element is supposed to be the last item in the row.
- *
- * Example: .some-selector { @include span(3 wide of 9 last); } 
- * (width of 3 columns + 1 gutter, out of 9 columns and is the last item within the context)
- *
- */
-
-
-/**
- * Span Function
- *
- * http://susydocs.oddbird.net/en/latest/toolkit/#span-function
- *
- *The Span function is similar to the span mixinwith the exception that it only returns the width of the element. You will only need the <width></ wider> and <layout>
- * 
- * This span function makes life a ton easier by not having the need to remember any margins or padding mixins that susy previously uses. Nowyou can just use the span function to get the correct width to pad.
- *
- * Example: .some-selector { padding-left: span(1 of 9); }
- * (padding of 1 column out of 9 columns)
+ * Breakpoint Config:
  *
  */
 
 /**
- * Gutter Function
- *
- * The gutter function takes only one argumentthe context.
- *
- * Example: .some-selector { margin-right: gutter(9); }
- * (outputs margin that equals to 1 gutter width in a 9 column layout)
- *
+ * Major Breakpoints
  */
+$breakpoints_major: (
+  small: 30em,  // 4 columns
+  medium: 40em, // 8 columns
+  large: 50em,  // 10 columns
+  xlarge: 60em  // 12 columns (maximum supported screen width)
+);
+
+/**
+ * Susy 'grid'
+ */
+$columns: (
+  small: 4,
+  medium: 8,
+  large: 10,
+  xlarge: 12
+);
 
