@@ -1,6 +1,6 @@
 {
   "name": "Archetype-CSS",
-  "version": "0.0.1",
+  "version": "0.8.2",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-cli": "0.1.9",
