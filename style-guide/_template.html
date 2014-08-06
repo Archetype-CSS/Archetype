@@ -3,73 +3,89 @@
 {% block head -%}
 {% include 'includes/_head.html' -%}
 {% endblock %}
-<body class="container">
+<body class="page">
   
   <header class="header">
     <section class="main-nav">
       <a href="#" class="menu-link"><span class="icon-th-list-1"></span>menu</a>
-      <a href="/index.html">Home</a>
-      <a href="#" class="grid-link">Grid</a>
     </section>
   </header>
   
   <nav class="nav--slide">
- 
-    <a href="/base.html">Base</a>
+
+    <a href="/index.html">Home</a>
+    <hr>
+    <a href="/docs/readme.html">Docs</a>
     <ul>
-      <li><a href="/base/breakpoints.html">Breakpoints</a></li>
-      <li><a href="/base/color-pallet.html">Color-Pallet</a></li>
-      <li><a href="/base/typography-pallet.html">Typography-Pallet</a></li>
-      <li><a href="/base/settings.html">Settings</a></li>
-      <li><a href="/base/structure-units.html">Structure-Units</a></li>
-      <li><a href="/base/skin-units.html">Skin-Units</a></li>
+      <li><a href="/docs/architecture.html">Architecture</a></li>
+      <li><a href="/docs/fe-ops.html">Front End Ops</a></li>
+      <li><a href="/docs/designPrinciples.html">Design Principles</a></li>
+      <li><a href="/docs/componentAPI.html">Component API</a></li>
+      <li><a href="/docs/performance-testing.html">Performance Testing</a></li>
+      <li><a href="/docs/stylesheet-codingStandard.html">Stylesheet Coding Standard</a></li>
+      <li><a href="/docs/stylesheet-testing.html">Architecture</a></li>
+      <li><a href="/docs/mvcGuidelines.html">MVC Guidelines</a></li>
+    </ul>
+    
+    <a href="/docs/archetypeModule.html">Archetype Modules</a>
+    <ul>
+      <li><a href="/main.scss.html">main.scss</a></li>
+      <li><a href="/utilities/Archetype-u-colorkit.html">Archetype-u-colorkit</a></li>
+      <li><a href="/components/typography.html">Archetype-c-typography</a></li>
+      <li><a href="/components/Archetype-c-spacers.html">Archetype-c-spacers</a></li>
+      <li><a href="/utilities/Archetype-u-componentConstructor">Archetype-u-componentConstructor</a></li>
+      <li><a href="Archetype-u-units">Archetype-u-units</a></li>
+      <li><a href="Archetype-c-page">Archetype-c-page</a></li>
     </ul>
        
     <a href="/objects.html">Objects</a>
     <ul>
-      <li><a href="/objects/nav-object.html">Nav-Object</a></li>
-      <li><a href="/objects/media-object.html">Media-Object</a></li>
-      <li><a href="/objects/close-object.html">Close-Object</a></li>
-      <li><a href="/objects/alert-object.html">Alert-Object</a></li>
-      <li><a href="/objects/label-object.html">Label-Object</a></li>
-      <li><a href="/objects/partition-object.html">Partition-Object</a></li>
-      <li><a href="/objects/button-object.html">Button-Object</a></li>
+      <li><a href="/objects/Archetype-o-nav.html">Archetype-o-object</a></li>
+      <li><a href="/objects/Archetype-o-media.html">Archetype-o-media</a></li>
+      <li><a href="/objects/Archetype-o-dismiss.html">Archetype-o-dismiss</a></li>
+      <li><a href="/objects/Archetype-o-alert.html">Archetype-o-alert</a></li>
+      <li><a href="/objects/Archetype-o-label.html">Archetype-o-label</a></li>
+      <li><a href="/objects/Archetype-o-partition.html">Archetype-o-partition</a></li>
+      <li><a href="/objects/Archetype-o-button.html">Archetype-o-button</a></li>
     </ul>
 
     <a href="/components.html">Components</a>
     <ul>
-      <li><a href="/components/typography.html">Typography</a></li>
-      <li><a href="/components/page.html">Page</a></li>
-      <li><a href="/components/quotes.html">Quotes</a></li>
-      <li><a href="/components/tables.html">Tables</a></li>
-      <li><a href="/components/rules.html">Rules</a></li>
-      <li><a href="/components/lists.html">Lists</a></li>
-      <li><a href="/components/links.html">Links</a></li>
-      <li><a href="/components/figures.html">Figures</a></li>
-      <li><a href="/components/code.html">Code</a></li>
-      <li><a href="/components/media.html">Media</a></li>
-      <li><a href="/components/forms.html">Forms</a></li>
-      <li><a href="/components/buttons.html">Buttons</a></li>
-      <li><a href="/components/close.html">Close</a></li>
-      <li><a href="/components/alerts.html">Alerts</a></li>
-      <li><a href="/components/spacers.html">Spacers</a></li>
-      <li><a href="/components/tabs.html">Tabs</a></li>
-      <li><a href="/components/partitions.html">Partitions</a></li>
-      <li><a href="/components/labels.html">Labels</a></li>
-      <li><a href="/components/icons.html">Icons</a></li>
+      <li><a href="/components/Archetype-c-typography.html">Archetype-c-typography</a></li>
+      <li><a href="/components/Archetype-c-page.html">Archetype-c-page</a></li>
+      <li><a href="/components/quotes.html">Archetype-c-quotes</a></li>
+      <li><a href="/components/Archetype-c-tables.html">Archetype-c-tables</a></li>
+      <li><a href="/components/Archetype-c-rules.html">Archetype-c-rules</a></li>
+      <li><a href="/components/Archetype-c-lists.html">Archetype-c-lists</a></li>
+      <li><a href="/components/Archetype-c-links.html">Archetype-c-links</a></li>
+      <li><a href="/components/Archetype-c-figures.html">Archetype-c-figures</a></li>
+      <li><a href="/components/Archetype-c-code.html">Archetype-c-code</a></li>
+      <li><a href="/components/Archetype-c-media.html">Archetype-c-media</a></li>
+      <li><a href="/components/Archetype-c-forms.html">Archetype-c-forms</a></li>
+      <li><a href="/components/Archetype-c-buttons.html">Archetype-c-buttons</a></li>
+      <li><a href="/components/Archetype-c-dismiss.html">Archetype-c-dismiss</a></li>
+      <li><a href="/components/Archetype-c-alerts.html">Archetype-c-alerts</a></li>
+      <li><a href="/components/Archetype-c-spacers.html">Archetype-c-spacers</a></li>
+      <li><a href="/components/Archetype-c-tabs.html">Archetype-c-tabs</a></li>
+      <li><a href="/components/Archetype-c-partitions.html">Archetype-c-partitions</a></li>
+      <li><a href="/components/Archetype-c-labels.html">Archetype-c-labels</a></li>
+      <li><a href="/components/Archetype-c-icons.html">Archetype-c-icons</a></li>
     </ul>
  
     <a href="/layout.html">Layout</a>
+    <ul>
+      <li><a href="">Breakpoints</a></li>
+    </ul>
 
   </nav>   
 
   {% block page -%}
-  <div class="page">
+  <div class="mainContent">
     {{ content }}
   </div>
   {% endblock %}
   {% block footer -%}
-  {% include 'includes/_footer.html' %}
+    {% include 'includes/_footer.html' %}
   {%- endblock %}
 </body>
 </html>
