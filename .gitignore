@@ -8,4 +8,4 @@ css/
 bower_components/
 tests/Archetype-*-*/
 .dexy/
-output/
+output-site/
